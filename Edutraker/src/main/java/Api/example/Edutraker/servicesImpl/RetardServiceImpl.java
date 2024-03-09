@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
@@ -33,13 +34,17 @@ public class RetardServiceImpl  implements RetardService {
 
     @Override
     public Retard updateRetard(Long id, Retard retard) {
-        if (retardRepository.existsById(id)) {
-            retard.setRet_id(id);
-            return retardRepository.save(retard);
+        Optional<Retard> existingRetardOptional = retardRepository.findById(id);
+        if (existingRetardOptional.isPresent()) {
+            Retard existingRetard = existingRetardOptional.get();
+            existingRetard.setDateRetard(retard.getDateRetard());
+            existingRetard.setMotif(retard.getMotif());
+            return retardRepository.save(existingRetard);
         } else {
-            return null;
+            return null; // Gérer le cas où le retard avec l'ID donné n'existe pas
         }
     }
+
 
     @Override
     public void deleteRetard(Long id) {

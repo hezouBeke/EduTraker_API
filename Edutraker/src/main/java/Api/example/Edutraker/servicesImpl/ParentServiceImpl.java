@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
@@ -32,13 +33,19 @@ public class ParentServiceImpl implements ParentService {
 
     @Override
     public Parent updateParent(Long id, Parent parent) {
-        if (parentRepository.existsById(id)) {
-            parent.setParent_id(id);
-            return parentRepository.save(parent);
+        Optional<Parent> existingParentOptional = parentRepository.findById(id);
+        if (existingParentOptional.isPresent()) {
+            Parent existingParent = existingParentOptional.get();
+            existingParent.setNom(parent.getNom());
+            existingParent.setPrenom(parent.getPrenom());
+            existingParent.setProfession(parent.getProfession());
+            existingParent.setEtudiant(parent.getEtudiant());
+            return parentRepository.save(existingParent);
         } else {
             return null;
         }
     }
+
 
     @Override
     public void deleteParent(Long id) {
