@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.Optional;
 
-public class EtudiantServiceImpl implements EtudiantService {
+public class EtudiantServiceImpl implements EtudiantService{
 
     @Autowired
     private EtudiantRepository etudiantRepository;

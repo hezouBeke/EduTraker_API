@@ -39,7 +39,7 @@ public class NotesServiceImpl implements NotesService {
             existingNotes.setEtudiant(notes.getEtudiant());
             return notesRepository.save(existingNotes);
         } else {
-            return null; // Gérer le cas où la note avec l'ID donné n'existe pas
+            return null;
         }
     }
 

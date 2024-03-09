@@ -7,6 +7,7 @@ import Api.example.Edutraker.services.ParentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,7 +41,7 @@ public class ParentServiceImpl implements ParentService {
             existingParent.setNom(parent.getNom());
             existingParent.setPrenom(parent.getPrenom());
             existingParent.setProfession(parent.getProfession());
-            existingParent.setEtudiant(parent.getEtudiant());
+            existingParent.setEtudiants(parent.getEtudiants());
             return parentRepository.save(existingParent);
         } else {
             return null;
@@ -48,15 +49,17 @@ public class ParentServiceImpl implements ParentService {
 
     }
     @Override
-    public Etudiant getEtudiantParent(Long parentId) {
+    public List<Etudiant> getEtudiantParent(Long parentId) {
         Optional<Parent> parentOptional = parentRepository.findById(parentId);
         if (parentOptional.isPresent()) {
             Parent parent = parentOptional.get();
-            return parent.getEtudiant();
+            return parent.getEtudiants();
         } else {
-            return null;
+
+            return Collections.emptyList();
         }
     }
+
 
     @Override
     public void deleteParent(Long id) {

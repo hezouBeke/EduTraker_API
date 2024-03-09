@@ -1,9 +1,6 @@
 package Api.example.Edutraker.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import javax.sql.DataSource;
 import java.util.Date;
@@ -15,6 +12,9 @@ public class Retard {
     private Long ret_id;
     private Date dateRetard;
     private String motif;
+    @ManyToOne
+    @JoinColumn(name = "etudiant_id")
+    private Etudiant etudiant;
 
     public Retard() {
     }

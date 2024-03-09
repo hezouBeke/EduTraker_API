@@ -16,11 +16,17 @@ public class Etudiant {
     private String salle;
     private  String filiere;
 
+
+    @ManyToOne
+    @JoinColumn(name = "parent_id")
+    private Parent parent;
+
     @OneToMany(mappedBy = "etudiant")
     private List<Notes> notes;
 
     @OneToMany(mappedBy = "etudiant")
     private List<Retard> retard;
+
 
     @OneToMany(mappedBy = "etudiant")
     private List<Absences> absences;

@@ -3,6 +3,8 @@ package Api.example.Edutraker.entities;
 import jakarta.persistence.*;
 import org.apache.catalina.startup.EngineRuleSet;
 
+import java.util.List;
+
 @Entity
 public class Parent {
     @Id
@@ -11,17 +13,19 @@ public class Parent {
     private String nom;
     private  String prenom;
     private String Profession;
-    @OneToMany
-    @JoinColumn(name = "etud_id")
-    private Etudiant etudiant;
+    @OneToMany(mappedBy = "parent")
+    private List<Etudiant> etudiants;
+
     public Parent(){
 
     }
 
-    public Parent(String nom, String prenom, String profession) {
+
+    public Parent(String nom, String prenom, String profession, List<Etudiant> etudiants) {
         this.nom = nom;
         this.prenom = prenom;
         Profession = profession;
+        this.etudiants = etudiants;
     }
 
     public String getNom() {
@@ -48,11 +52,11 @@ public class Parent {
         Profession = profession;
     }
 
-    public Etudiant getEtudiant() {
-        return etudiant;
+    public List<Etudiant> getEtudiants() {
+        return etudiants;
     }
 
-    public void setEtudiant(Etudiant etudiant) {
-        this.etudiant = etudiant;
+    public void setEtudiants(List<Etudiant> etudiants) {
+        this.etudiants = etudiants;
     }
 }
