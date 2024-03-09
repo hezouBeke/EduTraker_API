@@ -41,7 +41,7 @@ public class RetardServiceImpl  implements RetardService {
             existingRetard.setMotif(retard.getMotif());
             return retardRepository.save(existingRetard);
         } else {
-            return null; // Gérer le cas où le retard avec l'ID donné n'existe pas
+            return null;
         }
     }
 

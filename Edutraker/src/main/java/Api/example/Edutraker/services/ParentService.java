@@ -1,5 +1,6 @@
 package Api.example.Edutraker.services;
 
+import Api.example.Edutraker.entities.Etudiant;
 import Api.example.Edutraker.entities.Parent;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +14,8 @@ public interface ParentService {
     Parent getParent(Long id);
 
     List<Parent> getAllParents();
-
+    Etudiant getEtudiantParent(Long parentId);
     Parent updateParent(Long id, Parent parent);
-
     void deleteParent(Long id);
+
 }

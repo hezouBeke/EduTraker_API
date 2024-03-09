@@ -1,5 +1,6 @@
 package Api.example.Edutraker.servicesImpl;
 
+import Api.example.Edutraker.entities.Etudiant;
 import Api.example.Edutraker.entities.Parent;
 import Api.example.Edutraker.repositories.ParentRepository;
 import Api.example.Edutraker.services.ParentService;
@@ -44,11 +45,22 @@ public class ParentServiceImpl implements ParentService {
         } else {
             return null;
         }
-    }
 
+    }
+    @Override
+    public Etudiant getEtudiantParent(Long parentId) {
+        Optional<Parent> parentOptional = parentRepository.findById(parentId);
+        if (parentOptional.isPresent()) {
+            Parent parent = parentOptional.get();
+            return parent.getEtudiant();
+        } else {
+            return null;
+        }
+    }
 
     @Override
     public void deleteParent(Long id) {
         parentRepository.deleteById(id);
     }
 }
+
