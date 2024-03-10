@@ -9,11 +9,11 @@ import java.util.List;
 public interface EtudiantService {
     Etudiant createEtudiant(Etudiant etudiant);
 
-    Etudiant getEtudiant(Long id);
+    Etudiant getEtudiant(Long etud_id);
 
     List<Etudiant> getAllEtudiants();
 
-    Etudiant updateEtudiant(Long id, Etudiant etudiant);
+    Etudiant updateEtudiant(Long etud_id, Etudiant etudiant);
 
-    void deleteEtudiant(Long id);
+    void deleteEtudiant(Long etud_id);
 }

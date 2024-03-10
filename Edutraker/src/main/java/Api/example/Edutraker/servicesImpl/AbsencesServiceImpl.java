@@ -21,8 +21,8 @@ public class AbsencesServiceImpl  implements AbsencesService {
     }
 
     @Override
-    public Absences getAbsence(Long id) {
-        return absencesRepository.findById(id).orElse(null);
+    public Absences getAbsence(Long absences_id) {
+        return absencesRepository.findById(absences_id).orElse(null);
     }
 
     @Override
@@ -31,8 +31,8 @@ public class AbsencesServiceImpl  implements AbsencesService {
     }
 
     @Override
-    public Absences updateAbsence(Long id, Absences absences) {
-        Optional<Absences> existingAbsencesOptional = absencesRepository.findById(id);
+    public Absences updateAbsence(Long absences_id, Absences absences) {
+        Optional<Absences> existingAbsencesOptional = absencesRepository.findById(absences_id);
         if (existingAbsencesOptional.isPresent()) {
             Absences existingAbsences = existingAbsencesOptional.get();
             existingAbsences.setDateAbsence(absences.getDateAbsence());
@@ -46,8 +46,8 @@ public class AbsencesServiceImpl  implements AbsencesService {
 
 
     @Override
-    public void deleteAbsence(Long id) {
-        absencesRepository.deleteById(id);
+    public void deleteAbsence(Long absences_id) {
+        absencesRepository.deleteById(absences_id);
     }
 
 }

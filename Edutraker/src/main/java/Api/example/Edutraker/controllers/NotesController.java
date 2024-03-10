@@ -18,9 +18,9 @@ public class NotesController {
         return notesService.createNotes(notes);
     }
 
-    @GetMapping("/{id}")
-    public Notes getNotes(@PathVariable Long id) {
-        return notesService.getNotes(id);
+    @GetMapping("/{note_id}")
+    public Notes getNotes(@PathVariable Long note_id) {
+        return notesService.getNotes(note_id);
     }
 
     @GetMapping
@@ -28,13 +28,13 @@ public class NotesController {
         return notesService.getAllNotes();
     }
 
-    @PutMapping("/{id}")
-    public Notes updateNotes(@PathVariable Long id, @RequestBody Notes notes) {
-        return notesService.updateNotes(id, notes);
+    @PutMapping("/{note_id}")
+    public Notes updateNotes(@PathVariable Long note_id, @RequestBody Notes notes) {
+        return notesService.updateNotes(note_id, notes);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteNotes(@PathVariable Long id) {
-        notesService.deleteNotes(id);
+    @DeleteMapping("/{note_id}")
+    public void deleteNotes(@PathVariable Long note_id) {
+        notesService.deleteNotes(note_id);
     }
 }

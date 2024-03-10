@@ -1,7 +1,7 @@
 package Api.example.Edutraker.entities;
 
 import jakarta.persistence.*;
-import org.apache.catalina.startup.EngineRuleSet;
+
 
 import java.util.List;
 

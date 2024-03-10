@@ -24,8 +24,8 @@ public class ParentServiceImpl implements ParentService {
     }
 
     @Override
-    public Parent getParent(Long id) {
-        return parentRepository.findById(id).orElse(null);
+    public Parent getParent(Long parent_id) {
+        return parentRepository.findById(parent_id).orElse(null);
     }
 
     @Override
@@ -34,8 +34,8 @@ public class ParentServiceImpl implements ParentService {
     }
 
     @Override
-    public Parent updateParent(Long id, Parent parent) {
-        Optional<Parent> existingParentOptional = parentRepository.findById(id);
+    public Parent updateParent(Long parent_id, Parent parent) {
+        Optional<Parent> existingParentOptional = parentRepository.findById(parent_id);
         if (existingParentOptional.isPresent()) {
             Parent existingParent = existingParentOptional.get();
             existingParent.setNom(parent.getNom());
@@ -49,8 +49,8 @@ public class ParentServiceImpl implements ParentService {
 
     }
     @Override
-    public List<Etudiant> getEtudiantParent(Long parentId) {
-        Optional<Parent> parentOptional = parentRepository.findById(parentId);
+    public List<Etudiant> getEtudiantParent(Long parent_id) {
+        Optional<Parent> parentOptional = parentRepository.findById(parent_id);
         if (parentOptional.isPresent()) {
             Parent parent = parentOptional.get();
             return parent.getEtudiants();

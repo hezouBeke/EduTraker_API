@@ -8,5 +8,5 @@ import org.springframework.data.repository.query.Param;
 
 public interface ParentRepository  extends JpaRepository <Parent , Long> {
     @Query("SELECT p.etudiant FROM Parent p WHERE p.parent_id = :parentId")
-    Etudiant findEtudiantByParentId(@Param("parentId") Long parentId);
+    Etudiant findEtudiantByParentId(@Param("parent_id") Long parentId);
 }

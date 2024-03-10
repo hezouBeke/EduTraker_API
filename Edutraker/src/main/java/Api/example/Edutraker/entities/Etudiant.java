@@ -1,7 +1,7 @@
 package Api.example.Edutraker.entities;
 
 import jakarta.persistence.*;
-import org.aspectj.weaver.ast.Not;
+
 
 import java.util.List;
 
@@ -9,7 +9,6 @@ import java.util.List;
 public class Etudiant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long etud_id ;
     private  String nom ;
     private  String prenom;

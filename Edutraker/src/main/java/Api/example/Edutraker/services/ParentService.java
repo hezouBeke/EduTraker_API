@@ -11,11 +11,11 @@ import java.util.List;
 public interface ParentService {
     Parent createParent(Parent parent);
 
-    Parent getParent(Long id);
+    Parent getParent(Long parent_id);
 
     List<Parent> getAllParents();
     List<Etudiant> getEtudiantParent(Long parent_id);
-    Parent updateParent(Long id, Parent parent);
-    void deleteParent(Long id);
+    Parent updateParent(Long parent_id, Parent parent);
+    void deleteParent(Long parent_id);
 
 }

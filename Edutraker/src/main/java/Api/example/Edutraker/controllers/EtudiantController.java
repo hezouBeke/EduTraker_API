@@ -18,9 +18,9 @@ public class EtudiantController {
         return etudiantService.createEtudiant(etudiant);
     }
 
-    @GetMapping("/{id}")
-    public Etudiant getEtudiant(@PathVariable Long id) {
-        return etudiantService.getEtudiant(id);
+    @GetMapping("/{etud_id}")
+    public Etudiant getEtudiant(@PathVariable Long etud_id) {
+        return etudiantService.getEtudiant(etud_id);
     }
 
     @GetMapping
@@ -28,14 +28,14 @@ public class EtudiantController {
         return etudiantService.getAllEtudiants();
     }
 
-    @PutMapping("/{id}")
-    public Etudiant updateEtudiant(@PathVariable Long id, @RequestBody Etudiant etudiant) {
-        return etudiantService.updateEtudiant(id, etudiant);
+    @PutMapping("/{etud_id}")
+    public Etudiant updateEtudiant(@PathVariable Long etud_id, @RequestBody Etudiant etudiant) {
+        return etudiantService.updateEtudiant(etud_id, etudiant);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteEtudiant(@PathVariable Long id) {
-        etudiantService.deleteEtudiant(id);
+    @DeleteMapping("/{etud_id}")
+    public void deleteEtudiant(@PathVariable Long etud_id) {
+        etudiantService.deleteEtudiant(etud_id);
     }
 
 }

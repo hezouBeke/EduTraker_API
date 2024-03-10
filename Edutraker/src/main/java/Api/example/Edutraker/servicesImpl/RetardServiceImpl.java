@@ -23,8 +23,8 @@ public class RetardServiceImpl  implements RetardService {
     }
 
     @Override
-    public Retard getRetard(Long id) {
-        return retardRepository.findById(id).orElse(null);
+    public Retard getRetard(Long parent_id) {
+        return retardRepository.findById(parent_id).orElse(null);
     }
 
     @Override
@@ -33,8 +33,8 @@ public class RetardServiceImpl  implements RetardService {
     }
 
     @Override
-    public Retard updateRetard(Long id, Retard retard) {
-        Optional<Retard> existingRetardOptional = retardRepository.findById(id);
+    public Retard updateRetard(Long parent_id, Retard retard) {
+        Optional<Retard> existingRetardOptional = retardRepository.findById(parent_id);
         if (existingRetardOptional.isPresent()) {
             Retard existingRetard = existingRetardOptional.get();
             existingRetard.setDateRetard(retard.getDateRetard());

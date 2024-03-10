@@ -20,8 +20,8 @@ public class MatieresController {
     }
 
     @GetMapping("/{id}")
-    public Matieres getMatiere(@PathVariable Long id) {
-        return matieresService.getMatiere(id);
+    public Matieres getMatiere(@PathVariable Long mat_id) {
+        return matieresService.getMatiere(mat_id);
     }
 
     @GetMapping
@@ -29,13 +29,13 @@ public class MatieresController {
         return matieresService.getAllMatieres();
     }
 
-    @PutMapping("/{id}")
-    public Matieres updateMatiere(@PathVariable Long id, @RequestBody Matieres matieres) {
-        return matieresService.updateMatiere(id, matieres);
+    @PutMapping("/{mat_id}")
+    public Matieres updateMatiere(@PathVariable Long mat_id, @RequestBody Matieres matieres) {
+        return matieresService.updateMatiere(mat_id, matieres);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteMatiere(@PathVariable Long id) {
-        matieresService.deleteMatiere(id);
+    public void deleteMatiere(@PathVariable Long mat_id) {
+        matieresService.deleteMatiere(mat_id);
     }
 }

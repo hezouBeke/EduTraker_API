@@ -19,8 +19,8 @@ public class EtudiantServiceImpl implements EtudiantService{
     }
 
     @Override
-    public Etudiant getEtudiant(Long id) {
-        return etudiantRepository.findById(id).orElse(null);
+    public Etudiant getEtudiant(Long etud_id) {
+        return etudiantRepository.findById(etud_id).orElse(null);
     }
 
     @Override
@@ -29,8 +29,8 @@ public class EtudiantServiceImpl implements EtudiantService{
     }
 
     @Override
-    public Etudiant updateEtudiant(Long id, Etudiant etudiant) {
-        Optional<Etudiant> existingEtudiantOptional = etudiantRepository.findById(id);
+    public Etudiant updateEtudiant(Long etud_id, Etudiant etudiant) {
+        Optional<Etudiant> existingEtudiantOptional = etudiantRepository.findById(etud_id);
         if (existingEtudiantOptional.isPresent()) {
             Etudiant existingEtudiant = existingEtudiantOptional.get();
             existingEtudiant.setNom(etudiant.getNom());
@@ -48,7 +48,7 @@ public class EtudiantServiceImpl implements EtudiantService{
 
 
     @Override
-    public void deleteEtudiant(Long id) {
-        etudiantRepository.deleteById(id);
+    public void deleteEtudiant(Long etud_id) {
+        etudiantRepository.deleteById(etud_id);
     }
 }

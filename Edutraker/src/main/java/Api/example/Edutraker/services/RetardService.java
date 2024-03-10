@@ -9,11 +9,11 @@ import java.util.List;
 public interface RetardService {
     Retard createRetard(Retard retard);
 
-    Retard getRetard(Long id);
+    Retard getRetard(Long ret_id);
 
     List<Retard> getAllRetards();
 
-    Retard updateRetard(Long id, Retard retard);
+    Retard updateRetard(Long ret_id, Retard retard);
 
-    void deleteRetard(Long id);
+    void deleteRetard(Long ret_id);
 }

@@ -10,11 +10,11 @@ public interface NotesService {
 
     Notes createNotes(Notes notes);
 
-    Notes getNotes(Long id);
+    Notes getNotes(Long note_id);
 
     List<Notes> getAllNotes();
 
-    Notes updateNotes(Long id, Notes notes);
+    Notes updateNotes(Long note_id, Notes notes);
 
-    void deleteNotes(Long id);
+    void deleteNotes(Long note_id);
 }

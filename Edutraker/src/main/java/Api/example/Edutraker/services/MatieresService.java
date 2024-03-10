@@ -9,11 +9,11 @@ import java.util.List;
 public interface MatieresService {
     Matieres createMatiere(Matieres matieres);
 
-    Matieres getMatiere(Long id);
+    Matieres getMatiere(Long mat_id);
 
     List<Matieres> getAllMatieres();
 
-    Matieres updateMatiere(Long id, Matieres matieres);
+    Matieres updateMatiere(Long mat_id, Matieres matieres);
 
-    void deleteMatiere(Long id);
+    void deleteMatiere(Long mat_id);
 }

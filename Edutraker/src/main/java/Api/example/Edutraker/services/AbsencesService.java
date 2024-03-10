@@ -13,7 +13,7 @@ public interface AbsencesService {
 
     List<Absences> getAllAbsences();
 
-    Absences updateAbsence(Long id, Absences absences);
+    Absences updateAbsence(Long absences_id, Absences absences);
 
-    void deleteAbsence(Long id);
+    void deleteAbsence(Long absences_id);
 }

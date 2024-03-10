@@ -19,9 +19,9 @@ public class RetardController {
             return retardService.createRetard(retard);
         }
 
-        @GetMapping("/{id}")
-        public Retard getRetard(@PathVariable Long id) {
-            return retardService.getRetard(id);
+        @GetMapping("/{ret_id}")
+        public Retard getRetard(@PathVariable Long ret_id) {
+            return retardService.getRetard(ret_id);
         }
 
         @GetMapping
@@ -29,13 +29,13 @@ public class RetardController {
             return retardService.getAllRetards();
         }
 
-        @PutMapping("/{id}")
-        public Retard updateRetard(@PathVariable Long id, @RequestBody Retard retard) {
-            return retardService.updateRetard(id, retard);
+        @PutMapping("/{ret_id}")
+        public Retard updateRetard(@PathVariable Long ret_id, @RequestBody Retard retard) {
+            return retardService.updateRetard(ret_id, retard);
         }
 
-        @DeleteMapping("/{id}")
-        public void deleteRetard(@PathVariable Long id) {
-            retardService.deleteRetard(id);
+        @DeleteMapping("/{ret_id}")
+        public void deleteRetard(@PathVariable Long ret_id) {
+            retardService.deleteRetard(ret_id);
         }
 }

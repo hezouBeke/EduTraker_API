@@ -20,8 +20,8 @@ public class MatieresServiceImpl implements MatieresService {
     }
 
     @Override
-    public Matieres getMatiere(Long id) {
-        return matieresRepository.findById(id).orElse(null);
+    public Matieres getMatiere(Long mat_id) {
+        return matieresRepository.findById(mat_id).orElse(null);
     }
 
     @Override
@@ -34,8 +34,8 @@ public class MatieresServiceImpl implements MatieresService {
     }
 
     @Override
-    public Matieres updateMatiere(Long id, Matieres matieres) {
-        Optional<Matieres> existingMatieresOptional = matieresRepository.findById(id);
+    public Matieres updateMatiere(Long mat_id, Matieres matieres) {
+        Optional<Matieres> existingMatieresOptional = matieresRepository.findById(mat_id);
         if (existingMatieresOptional.isPresent()) {
             Matieres existingMatieres = existingMatieresOptional.get();
             existingMatieres.setNomMat(matieres.getNomMat());
@@ -47,7 +47,7 @@ public class MatieresServiceImpl implements MatieresService {
 
 
     @Override
-    public void deleteMatiere(Long id) {
-        matieresRepository.deleteById(id);
+    public void deleteMatiere(Long mat_id) {
+        matieresRepository.deleteById(mat_id);
     }
 }

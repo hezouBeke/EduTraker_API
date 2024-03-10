@@ -16,9 +16,9 @@ public class AbsencesController {
         return absencesService.createAbsence(absences);
     }
 
-    @GetMapping("/{id}")
-    public Absences getAbsence(@PathVariable Long id) {
-        return absencesService.getAbsence(id);
+    @GetMapping("/{absences_id}")
+    public Absences getAbsence(@PathVariable Long absences_id) {
+        return absencesService.getAbsence(absences_id);
     }
 
     @GetMapping
@@ -26,13 +26,13 @@ public class AbsencesController {
         return absencesService.getAllAbsences();
     }
 
-    @PutMapping("/{id}")
-    public Absences updateAbsence(@PathVariable Long id, @RequestBody Absences absences) {
-        return absencesService.updateAbsence(id, absences);
+    @PutMapping("/{absences_id}")
+    public Absences updateAbsence(@PathVariable Long absences_id, @RequestBody Absences absences) {
+        return absencesService.updateAbsence(absences_id, absences);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteAbsence(@PathVariable Long id) {
-        absencesService.deleteAbsence(id);
+    @DeleteMapping("/{absences_id}")
+    public void deleteAbsence(@PathVariable Long absences_id) {
+        absencesService.deleteAbsence(absences_id);
     }
 }

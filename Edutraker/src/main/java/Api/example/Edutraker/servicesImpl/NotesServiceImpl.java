@@ -19,8 +19,8 @@ public class NotesServiceImpl implements NotesService {
     }
 
     @Override
-    public Notes getNotes(Long id) {
-        return notesRepository.findById(id).orElse(null);
+    public Notes getNotes(Long note_id) {
+        return notesRepository.findById(note_id).orElse(null);
     }
 
     @Override
@@ -30,8 +30,8 @@ public class NotesServiceImpl implements NotesService {
 
 
     @Override
-    public Notes updateNotes(Long id, Notes notes) {
-        Optional<Notes> existingNotesOptional = notesRepository.findById(id);
+    public Notes updateNotes(Long note_id, Notes notes) {
+        Optional<Notes> existingNotesOptional = notesRepository.findById(note_id);
         if (existingNotesOptional.isPresent()) {
             Notes existingNotes = existingNotesOptional.get();
             existingNotes.setValeur(notes.getValeur());
@@ -45,7 +45,7 @@ public class NotesServiceImpl implements NotesService {
 
 
     @Override
-    public void deleteNotes(Long id) {
-        notesRepository.deleteById(id);
+    public void deleteNotes(Long note_id) {
+        notesRepository.deleteById(note_id);
     }
 }
