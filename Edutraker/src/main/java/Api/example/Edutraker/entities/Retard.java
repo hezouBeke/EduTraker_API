@@ -13,7 +13,7 @@ public class Retard {
     private Date dateRetard;
     private String motif;
     @ManyToOne
-    @JoinColumn(name = "etudiant_id")
+    @JoinColumn(name = "etud_id")
     private Etudiant etudiant;
 
     public Retard() {

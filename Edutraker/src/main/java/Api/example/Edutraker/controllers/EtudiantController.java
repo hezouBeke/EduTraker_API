@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/etudiants")
 public class EtudiantController {
-    @Autowired
+    @Autowired(required = false)
     private EtudiantService etudiantService;
 
     @PostMapping
@@ -24,7 +24,7 @@ public class EtudiantController {
     }
 
     @GetMapping
-    public List<Etudiant> getAllEtudiants() {
+    public List<Etudiant> getalletudiants() {
         return etudiantService.getAllEtudiants();
     }
 

@@ -48,17 +48,12 @@ public class ParentServiceImpl implements ParentService {
         }
 
     }
+
     @Override
     public List<Etudiant> getEtudiantParent(Long parent_id) {
-        Optional<Parent> parentOptional = parentRepository.findById(parent_id);
-        if (parentOptional.isPresent()) {
-            Parent parent = parentOptional.get();
-            return parent.getEtudiants();
-        } else {
-
-            return Collections.emptyList();
-        }
+        return parentRepository.findEtudiantsByParentId(parent_id);
     }
+
 
 
     @Override

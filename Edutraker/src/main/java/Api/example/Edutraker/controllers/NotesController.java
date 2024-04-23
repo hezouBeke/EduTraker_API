@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("notes")
 public class NotesController {
-    @Autowired
+    @Autowired(required = false)
     private NotesService notesService;
 
     @PostMapping

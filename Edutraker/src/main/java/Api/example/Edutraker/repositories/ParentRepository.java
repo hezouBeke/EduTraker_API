@@ -6,7 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 public interface ParentRepository  extends JpaRepository <Parent , Long> {
-    @Query("SELECT p.etudiant FROM Parent p WHERE p.parent_id = :parentId")
-    Etudiant findEtudiantByParentId(@Param("parent_id") Long parentId);
-}
+
+        @Query("SELECT p.etudiants FROM Parent p WHERE p.parent_id = :parent_id")
+        List<Etudiant> findEtudiantsByParentId(@Param("parent_id") Long parentId);
+    }
+    
