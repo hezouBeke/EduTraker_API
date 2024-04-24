@@ -13,7 +13,7 @@ public class EtudiantController {
     @Autowired(required = false)
     private EtudiantService etudiantService;
 
-    @PostMapping
+    @PostMapping("/{create}")
     public Etudiant createEtudiant(@RequestBody Etudiant etudiant) {
         return etudiantService.createEtudiant(etudiant);
     }
